@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+    /*public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
 
         //Intro
@@ -117,7 +117,7 @@ public class App {
                 break;
             }
         }
-    }
+    }*/
 }
 
 
