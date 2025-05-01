@@ -2,7 +2,6 @@ package src.pokemons;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 import src.actions.Attack;
 
@@ -98,9 +97,11 @@ public abstract class Pokemon implements Comparable<Pokemon> {
     }
 
     //Random Attacks generator
-    public void selectAttackRandom(){
+    public void selectAttacksRandom(){
         Random random = new Random();
         int indexAttack;
+
+
         do{
             indexAttack = random.nextInt(attacksOfClass.size());
         }while(attacksInstance.contains(attacksOfClass.get(indexAttack)));
