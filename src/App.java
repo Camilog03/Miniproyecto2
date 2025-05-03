@@ -1,9 +1,10 @@
 package src;
 
-import src.characters.Trainer;
 import src.pokemons.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import Trainer;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -97,7 +98,7 @@ public class App {
 
         switch (option) {
             case 1:
-                trainer.addCreatedPokemon(scanner);
+                
                 trainer.showPokemons();
                 break;
             case 2:

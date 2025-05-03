@@ -1,4 +1,4 @@
-package src.characters;
+
 
 import java.util.*;
 
@@ -102,84 +102,5 @@ public class Trainer {
             }
         }
     }
-
-    //Method to add pokemon created by the trainer
-    public void addCreatedPokemon(Scanner scanner){
-        System.out.println("\n\nVamos a crear tus pokemones!");
-
-        for (int i = 0; i < getMaxPokemon(); i++) {
-            System.out.println("\nPokemon " + (i + 1));
-            System.out.print("Ingresa el nombre de tu pokemon:");
-            String name = scanner.nextLine();
-
-            System.out.print("Ingresa la vida (hp) de tu pokemon: ");
-            int hp = scanner.nextInt();
-
-            System.out.print("Ingresa la defensa (DEF) de tu pokemon: ");
-            int defense = scanner.nextInt();
-
-            scanner.nextLine();
-
-            System.out.println("\n-----------Types of Pokemons----------");
-            byte counter = 1;
-            for (Type types : Type.values()) {
-                System.out.println(counter + ". " + types);
-                counter++;
-            }
-
-            boolean option = false;
-            Type type = null;
-            //To receive a valid option
-            while (!option) {
-                System.out.print("\nIngresa el tipo de tu pokemon:");
-                String election = scanner.nextLine().toUpperCase();
-
-                for (Type t : Type.values()) {
-                    if (t.name().equals(election)) {
-                        type = t;
-                        option = true;
-                        break;
-                    }
-                }
-
-                if (!option) {
-                    System.out.println("Tipo inválido. Intenta de nuevo.");
-                }
-            }
-            //Create the pokemon according to its type
-            switch (type) {
-                case ELECTRIC:
-                    selectPokemonslist.add(new ElectricPokemon(name, type, hp, defense));
-                    selectPokemonslist.getLast().selectAttack(scanner);
-                    break;
-                case FIRE:
-                    selectPokemonslist.add(new FirePokemon(name, type, hp, defense));
-                    selectPokemonslist.getLast().selectAttack(scanner);
-                    break;
-                case FLYING:
-                    selectPokemonslist.add(new FlyingPokemon(name, type, hp, defense));
-                    selectPokemonslist.getLast().selectAttack(scanner);
-                    break;
-                case GROUND:
-                    selectPokemonslist.add(new GroundPokemon(name, type, hp, defense));
-                    selectPokemonslist.getLast().selectAttack(scanner);
-                    break;
-                case PLANT:
-                    selectPokemonslist.add(new PlantPokemon(name, type, hp, defense));
-                    selectPokemonslist.getLast().selectAttack(scanner);
-                    break;
-                case ROCK:
-                    selectPokemonslist.add(new RockPokemon(name, type, hp, defense));
-                    selectPokemonslist.getLast().selectAttack(scanner);
-                    break;
-                case WATER:
-                    selectPokemonslist.add(new WaterPokemon(name, type, hp, defense));
-                    selectPokemonslist.getLast().selectAttack(scanner);
-                    break;
-                default:
-                    break;
-            }
-            scanner.nextLine();
-        }
-    }
+    
 }
